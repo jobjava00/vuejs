@@ -1,5 +1,6 @@
-import Vue from 'vue'
-import App from './App.vue'
+import Vue from 'vue';
+import App from './App.vue';
+import moment from 'moment';
 const accounting =  require('./assets/accounting.min.js');
 
 Vue.filter('capitalize', function (string) {
@@ -9,6 +10,10 @@ Vue.filter('capitalize', function (string) {
 
 Vue.filter('dollars', function (money) {
   return accounting.formatMoney(money);
+});
+
+Vue.filter('date', function (date, format) {
+  return moment(date).format(format);
 });
 
 new Vue({

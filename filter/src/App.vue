@@ -7,6 +7,7 @@
     <ul>
       <li v-for="item in inventory">{{item.name}} : {{item.price | dollars}}</li>
     </ul>
+    <h4>date : {{ createDt | date('YYYY-MM-DD HH:mm:ss') }}</h4>
   </div>
 </template>
 
@@ -23,7 +24,8 @@ export default {
         {name: 'stamp', price: '0.01'},
         {name: 'shark tooth', price: '1.5'},
         {name: 'iphone', price: '999'}
-      ]
+      ],
+      createDt: '2019-01-01T05:06:07'
     }
   }
 }
